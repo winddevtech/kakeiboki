@@ -1,0 +1,4 @@
+create index create_date on budget (date);
+create index name on user (name);
+
+

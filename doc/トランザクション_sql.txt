@@ -1,0 +1,26 @@
+¡‚¨–â‚¢‡‚í‚¹“à—eV‹K“o˜^
+
+set autocommit = 0;
+
+start transaction;
+
+insert into contact (user_id, category_id, rs_id, created_at) values (:user_id, :category_id, 1,now())
+
+//lastInsertId
+
+select @contact_id := id from contact where user_id = :user_id order by created_at desc limit 1;
+
+insert into timeline (user_id, contact_id, sender, context, created_at) values (:user_id, @contact_id, 1, :context, now())
+
+commit;
+
+//ƒGƒ‰[
+rollback;
+
+==========================================================================
+
+
+
+
+
+

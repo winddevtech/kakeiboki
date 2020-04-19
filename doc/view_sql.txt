@@ -1,0 +1,177 @@
+正常コード１
+create view debit_list as select debit_id, coalesce(sum(price), 0) as debit_price from budget b inner join journal j on b.journal_id = j.id group by debit_id;
+create view credit_list as select credit_id, coalesce(sum(price), 0) as credit_price from budget b inner join journal j on b.journal_id = j.id group by credit_id;
+
+create view trial_balance as 
+select debit_id, coalesce(debit_price, 0) as debit_price, credit_id, coalesce(credit_price, 0) as credit_price from 
+debit_list d left join credit_list c on debit_id = credit_id group by debit_id
+union
+select debit_id, coalesce(debit_price, 0) as debit_price, credit_id, coalesce(credit_price, 0) as credit_price from 
+debit_list d right join credit_list c on debit_id = credit_id group by credit_id;;
+
+select * from trial_balance;
+=================================================================================================================================================================
+正常コード２
+create view debit_list as select debit_id, coalesce(sum(price), 0) as debit_price from budget b inner join journal j on b.journal_id = j.id group by debit_id;
+create view credit_list as select credit_id, coalesce(sum(price), 0) as credit_price from budget b inner join journal j on b.journal_id = j.id group by credit_id;
+
+create view pre_trial_balance as 
+select debit_id, coalesce(debit_price, 0) as debit_price, credit_id, coalesce(credit_price, 0) as credit_price from 
+debit_list d left join credit_list c on debit_id = credit_id group by debit_id;
+
+create view pre_trial_balance as 
+select debit_id, coalesce(debit_price, 0) as debit_price, credit_id, coalesce(credit_price, 0) as credit_price from 
+debit_list d left join credit_list c on debit_id = credit_id group by debit_id
+union
+select debit_id, coalesce(debit_price, 0) as debit_price, credit_id, coalesce(credit_price, 0) as credit_price from 
+debit_list d right join credit_list c on debit_id = credit_id group by credit_id;
+
+create view trial_balance as 
+select coalesce(debit_price, 0) as debit_price, name as subject_name, js.id as subject_id, coalesce(credit_price, 0) as credit_price from 
+journal_subject js left join pre_trial_balance tb on js.id = tb.debit_id
+union
+select coalesce(debit_price, 0) as debit_price, name as subject_name, js.id as subject_id, coalesce(credit_price, 0) as credit_price from 
+journal_subject js right join pre_trial_balance tb on js.id = tb.debit_id;
+
+/*create view trial_balance as 
+select coalesce(debit_price, 0) as debit_price, name as subject_name , js.id as subject_id, coalesce(credit_price, 0) as credit_price from 
+(select debit_id, coalesce(sum(price), 0) as debit_price from budget b inner join journal j on b.journal_id = j.id group by debit_id) as d 
+journal_subject js left join trial_balance tb on js.id = tb.debit_id;*/
+
+
+select * from trial_balance;
+===================================================================
+エラー発生コード
+
+create view trial_balance as 
+select d.debit_id, coalesce(d.debit_price, 0) as debit_price, c.credit_id, coalesce(c.credit_price, 0) as credit_price from
+((select debit_id, coalesce(sum(price), 0) as debit_price from budget b inner join journal j on b.journal_id = j.id group by debit_id) as d 
+left join 
+(select credit_id, coalesce(sum(price), 0) as credit_price from budget b inner join journal j on b.journal_id = j.id group by credit_id) as c 
+on d.debit_id = c.credit_id group by d.debit_id);
+===================================================================
+エラー発生コード２
+
+create view trial_balance as
+select js.id as subject_id, name, coalesce(debit_price, 0) as debit_price, coalesce(credit_price, 0) as credit_price from
+journal_subject js left join
+(
+select debit_id, coalesce(debit_price, 0) as debit_price, credit_id, coalesce(credit_price, 0) as credit_price from
+debit_list d left join credit_list c on debit_id = credit_id group by debit_id
+union
+select debit_id, coalesce(debit_price, 0) as debit_price, credit_id, coalesce(credit_price, 0) as credit_price from
+debit_list d right join credit_list c on debit_id = credit_id group by credit_id
+) as pre
+on js.id = coalesce(debit_id, credit_id);
+===================================================================
+正常コード３
+
+//借方を表示
+create view debit_list as select debit_id, coalesce(sum(price), 0) as debit_price from budget b inner join journal j on b.journal_id = j.id group by debit_id;
+//貸方を表示
+create view credit_list as select credit_id, coalesce(sum(price), 0) as credit_price from budget b inner join journal j on b.journal_id = j.id group by credit_id;
+
+//試算表作成準備
+create view pre_trial_balance as 
+select coalesce(debit_id, credit_id) as subject_id, coalesce(debit_price, 0) as debit_price, coalesce(credit_price, 0) as credit_price from
+debit_list d left
+join credit_list c on debit_id = credit_id group by debit_id
+union
+select coalesce(debit_id, credit_id) as subject_id, coalesce(debit_price, 0) as debit_price, coalesce(credit_price, 0) as credit_price from
+debit_list d right join credit_list c on debit_id = credit_id group by credit_id;
+
+//試算表を表示１
+create view trial_balance as
+select js.id as subject_id, name as subject_name, coalesce(debit_price, 0) as debit_price, coalesce(credit_price, 0) as credit_price from
+journal_subject js inner join
+pre_trial_balance pre
+on js.id = pre.subject_id;
+
+//試算表を表示２
+create view trial_balance as
+select js.id as subject_id, js.jc_id as category_id, name as subject_name, coalesce(debit_price, 0) as debit_price, coalesce(credit_price, 0) as credit_price from
+journal_subject js inner join
+pre_trial_balance pre
+on js.id = pre.subject_id;
+
+select * from trial_balance;
+===================================================================
+正常コード４
+
+//借方を表示
+create view debit_list as select debit_id, coalesce(sum(price), 0) as debit_price, date_format(date,"%Y/%m") as date from budget b inner join journal j on b.journal_id = j.id group by date_format(date,"%Y/%m"), debit_id;
+//貸方を表示
+create view credit_list as select credit_id, coalesce(sum(price), 0) as credit_price, date_format(date,"%Y/%m") as date from budget b inner join journal j on b.journal_id = j.id group by date_format(date,"%Y/%m"), credit_id;
+
+//試算表作成準備
+create view pre_trial_balance as 
+select coalesce(debit_id, credit_id) as subject_id, coalesce(debit_price, 0) as debit_price, coalesce(credit_price, 0) as credit_price, coalesce(d.date, c.date) as date from
+debit_list d left join credit_list c on d.date = c.date and debit_id = credit_id group by d.date, debit_id
+union
+select coalesce(debit_id, credit_id) as subject_id, coalesce(debit_price, 0) as debit_price, coalesce(credit_price, 0) as credit_price, coalesce(c.date, d.date) as date from
+debit_list d right join credit_list c on d.date = c.date and debit_id = credit_id group by c.date, credit_id;
+
+
+//試算表を表示１
+create view trial_balance as
+select js.id as subject_id, js.jc_id as category_id, name as subject_name, coalesce(debit_price, 0) as debit_price, coalesce(credit_price, 0) as credit_price, pre.date from
+journal_subject js inner join
+pre_trial_balance pre
+on js.id = pre.subject_id;
+
+select * from trial_balance where date = :date;
+===================================================================
+正常コード５
+
+//借方を表示
+create view debit_list as select debit_id, coalesce(sum(price), 0) as debit_price, date_format(date,"%Y/%m") as date, user_id from budget b inner join journal j on b.journal_id = j.id group by user_id, date_format(date,"%Y/%m"), debit_id;
+//貸方を表示
+create view credit_list as select credit_id, coalesce(sum(price), 0) as credit_price, date_format(date,"%Y/%m") as date, user_id from budget b inner join journal j on b.journal_id = j.id group by user_id, date_format(date,"%Y/%m"), credit_id;
+
+//試算表作成準備
+create view pre_trial_balance as 
+select coalesce(debit_id, credit_id) as subject_id, coalesce(debit_price, 0) as debit_price, coalesce(credit_price, 0) as credit_price, coalesce(d.date, c.date) as date, d.user_id from
+debit_list d left join credit_list c on d.date = c.date and debit_id = credit_id group by d.user_id, d.date, debit_id
+union
+select coalesce(debit_id, credit_id) as subject_id, coalesce(debit_price, 0) as debit_price, coalesce(credit_price, 0) as credit_price, coalesce(c.date, d.date) as date, c.user_id from
+debit_list d right join credit_list c on d.date = c.date and debit_id = credit_id group by c.user_id, c.date, credit_id;
+
+//試算表を表示１
+create view trial_balance as
+select js.id as subject_id, class_id, name as subject_name, coalesce(debit_price, 0) as debit_price, coalesce(credit_price, 0) as credit_price, pre.date, user_id from pre_trial_balance pre inner join journal_subject js on js.id = pre.subject_id group by user_id, pre.date, subject_id;
+
+select * from trial_balance where date = :date and user_id = :user_id;
+
+===================================================================
+正常コード６（2017/3/5）
+
+//借方を表示
+create view debit_list as select debit_id, coalesce(sum(price), 0) as debit_price, date_format(date,"%Y/%m") as date, user_id from budget b inner join journal j on b.journal_id = j.id group by user_id, date_format(date,"%Y/%m"), debit_id order by debit_id asc;
+
+//貸方を表示
+create view credit_list as select credit_id, coalesce(sum(price), 0) as credit_price, date_format(date,"%Y/%m") as date, user_id from budget b inner join journal j on b.journal_id = j.id group by user_id, date_format(date,"%Y/%m"), credit_id order by debit_id asc;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

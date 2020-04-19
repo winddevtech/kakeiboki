@@ -1,0 +1,214 @@
+-- ---
+-- Globals
+-- ---
+
+-- SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+-- SET FOREIGN_KEY_CHECKS=0;
+
+-- ---
+-- Table 'user'
+-- 家計簿記を利用する、ユーザー情報を格納する。
+-- ---
+
+DROP TABLE IF EXISTS `user`;
+		
+CREATE TABLE `user` (
+  `id` INTEGER NOT NULL AUTO_INCREMENT COMMENT 'ユーザー情報管理ID',
+  `name` VARCHAR(15) NOT NULL COMMENT 'ユーザー名',
+  `email` VARCHAR(100) NOT NULL COMMENT 'ユーザーのEmail',
+  `password` VARCHAR(100) NOT NULL COMMENT 'ログインパスワード',
+  `kari_password` VARCHAR(100) NULL DEFAULT NULL COMMENT '仮パスワード',
+  `kari_created_at` TIMESTAMP NULL DEFAULT NULL COMMENT '仮パスワード生成日時',
+  `display_count` INTEGER NOT NULL COMMENT '一覧表示件数',
+  `icon` BLOB NULL DEFAULT NULL COMMENT 'アイコン画像',
+  `session_id` VARCHAR(60) NULL DEFAULT NULL COMMENT 'セッションID',
+  `lastlogin_at` TIMESTAMP NULL DEFAULT NULL COMMENT '最終ログイン日時',
+  `created_at` TIMESTAMP NOT NULL COMMENT '登録日時',
+  `updated_at` TIMESTAMP NULL DEFAULT NULL COMMENT '更新日時',
+  UNIQUE KEY (`email`),
+  PRIMARY KEY (`id`)
+) COMMENT '家計簿記を利用する、ユーザー情報を格納する。';
+
+-- ---
+-- Table 'budget'
+-- 家計簿データを格納する。
+-- ---
+
+DROP TABLE IF EXISTS `budget`;
+		
+CREATE TABLE `budget` (
+  `id` INTEGER NOT NULL AUTO_INCREMENT COMMENT '仕訳データ管理ID',
+  `user_id` INTEGER NOT NULL COMMENT 'ユーザー管理ID',
+  `date` TIMESTAMP NOT NULL COMMENT '仕訳発生日付',
+  `journal_id` INTEGER NOT NULL COMMENT '仕訳ID',
+  `price` INTEGER NOT NULL COMMENT '金額',
+  `summary` VARCHAR(30) NOT NULL COMMENT '摘要',
+  `created_at` TIMESTAMP NOT NULL COMMENT '登録日時',
+  `updated_at` TIMESTAMP NULL DEFAULT NULL COMMENT '更新日時',
+  PRIMARY KEY (`id`)
+) COMMENT '家計簿データを格納する。';
+
+-- ---
+-- Table 'journal_subject'
+-- 仕訳科目情報を格納する。
+-- ---
+
+DROP TABLE IF EXISTS `journal_subject`;
+		
+CREATE TABLE `journal_subject` (
+  `id` INTEGER NOT NULL AUTO_INCREMENT COMMENT '仕訳科目ID',
+  `class_id` INTEGER NOT NULL COMMENT '分類ID',
+  `name` CHAR(20) NOT NULL COMMENT '仕訳科目名',
+  `created_at` TIMESTAMP NOT NULL COMMENT '登録日時',
+  `updated_at` TIMESTAMP NULL DEFAULT NULL COMMENT '更新日時',
+  PRIMARY KEY (`id`)
+) COMMENT '仕訳科目情報を格納する。';
+
+-- ---
+-- Table 'auto_login'
+-- ユーザーの自動ログイン情報を格納する。
+-- ---
+
+DROP TABLE IF EXISTS `auto_login`;
+		
+CREATE TABLE `auto_login` (
+  `id` INTEGER NOT NULL AUTO_INCREMENT COMMENT '自動ログイン管理ID',
+  `user_id` INTEGER NOT NULL COMMENT 'ユーザー情報管理ID',
+  `c_key` VARCHAR(40) NOT NULL COMMENT 'Cookieデータ',
+  `expire` TIMESTAMP NOT NULL COMMENT 'Cookieデータ',
+  `created_at` TIMESTAMP NOT NULL COMMENT '登録日時',
+  `updated_at` TIMESTAMP NULL DEFAULT NULL COMMENT '更新日時',
+  PRIMARY KEY (`id`)
+) COMMENT 'ユーザーの自動ログイン情報を格納する。';
+
+-- ---
+-- Table 'contact'
+-- お問い合わせ情報を格納する。
+-- ---
+
+DROP TABLE IF EXISTS `contact`;
+		
+CREATE TABLE `contact` (
+  `id` INTEGER NOT NULL AUTO_INCREMENT COMMENT 'お問い合わせ情報管理ID',
+  `user_id` INTEGER NOT NULL COMMENT 'ユーザー情報管理ID',
+  `category_id` INTEGER NOT NULL COMMENT 'お問い合わせカテゴリ情報管理ID',
+  `rs_id` INTEGER NULL DEFAULT 1 COMMENT '返信状況ステータスID',
+  `created_at` TIMESTAMP NOT NULL COMMENT '登録日時',
+  `updated_at` TIMESTAMP NULL DEFAULT NULL COMMENT '更新日時',
+  PRIMARY KEY (`id`)
+) COMMENT 'お問い合わせ情報を格納する。';
+
+-- ---
+-- Table 'transaction'
+-- ユーザーが家計簿記に対して行った処理情報を格納する。
+-- ---
+
+DROP TABLE IF EXISTS `transaction`;
+		
+CREATE TABLE `transaction` (
+  `id` INTEGER NOT NULL AUTO_INCREMENT COMMENT 'トランザクションID',
+  `user_id` INTEGER NOT NULL COMMENT 'ユーザー情報管理ID',
+  `content` CHAR(50) NOT NULL COMMENT '変更内容',
+  `created_at` TIMESTAMP NOT NULL COMMENT '登録日時',
+  `updated_at` TIMESTAMP NULL DEFAULT NULL COMMENT '更新日時',
+  PRIMARY KEY (`id`)
+) COMMENT 'ユーザーが家計簿記に対して行った処理情報を格納する。';
+
+-- ---
+-- Table 'version'
+-- 家計簿記のバージョン履歴情報を格納する。
+-- ---
+
+DROP TABLE IF EXISTS `version`;
+		
+CREATE TABLE `version` (
+  `id` INTEGER NOT NULL AUTO_INCREMENT COMMENT 'バージョン履歴管理ID',
+  `number` VARCHAR(10) NOT NULL COMMENT 'バージョン履歴番号',
+  `context` MEDIUMTEXT NOT NULL COMMENT '更新内容',
+  `created_at` TIMESTAMP NOT NULL COMMENT '登録日時',
+  `updated_at` TIMESTAMP NULL DEFAULT NULL COMMENT '更新日時',
+  PRIMARY KEY (`id`)
+) COMMENT '家計簿記のバージョン履歴情報を格納する。';
+
+-- ---
+-- Table 'journal'
+-- 仕訳表データを格納する。
+-- ---
+
+DROP TABLE IF EXISTS `journal`;
+		
+CREATE TABLE `journal` (
+  `id` INTEGER NOT NULL AUTO_INCREMENT COMMENT '仕訳ID',
+  `debit_id` INTEGER NOT NULL COMMENT '借方項目ID',
+  `credit_id` INTEGER NOT NULL COMMENT '貸方項目ID',
+  `created_at` TIMESTAMP NOT NULL COMMENT '登録日時',
+  `updated_at` TIMESTAMP NULL DEFAULT NULL COMMENT '更新日時',
+  PRIMARY KEY (`id`)
+) COMMENT '仕訳表データを格納する。';
+
+-- ---
+-- Table 'timeline'
+-- タイムライン情報を格納する。
+-- ---
+
+DROP TABLE IF EXISTS `timeline`;
+		
+CREATE TABLE `timeline` (
+  `id` INTEGER NOT NULL AUTO_INCREMENT COMMENT 'タイムライン管理ID',
+  `contact_id` INTEGER NOT NULL COMMENT 'お問い合わせ情報管理ID',
+  `sender` INTEGER NOT NULL COMMENT '送信者ID',
+  `context` MEDIUMTEXT NOT NULL COMMENT 'お問い合わせ内容',
+  `created_at` TIMESTAMP NOT NULL COMMENT '登録日時',
+  `updated_at` TIMESTAMP NULL DEFAULT NULL COMMENT '更新日時',
+  PRIMARY KEY (`id`)
+) COMMENT 'タイムライン情報を格納する。';
+
+-- ---
+-- Foreign Keys 
+-- ---
+
+ALTER TABLE `budget` ADD FOREIGN KEY (user_id) REFERENCES `user` (`id`);
+ALTER TABLE `budget` ADD FOREIGN KEY (journal_id) REFERENCES `journal` (`id`);
+ALTER TABLE `auto_login` ADD FOREIGN KEY (user_id) REFERENCES `user` (`id`);
+ALTER TABLE `contact` ADD FOREIGN KEY (user_id) REFERENCES `user` (`id`);
+ALTER TABLE `transaction` ADD FOREIGN KEY (user_id) REFERENCES `user` (`id`);
+ALTER TABLE `journal` ADD FOREIGN KEY (debit_id) REFERENCES `journal_subject` (`id`);
+ALTER TABLE `journal` ADD FOREIGN KEY (credit_id) REFERENCES `journal_subject` (`id`);
+ALTER TABLE `timeline` ADD FOREIGN KEY (contact_id) REFERENCES `contact` (`id`);
+
+-- ---
+-- Table Properties
+-- ---
+
+-- ALTER TABLE `user` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `budget` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `journal_subject` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `auto_login` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `contact` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `transaction` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `version` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `journal` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `timeline` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- ---
+-- Test Data
+-- ---
+
+-- INSERT INTO `user` (`id`,`name`,`email`,`password`,`kari_password`,`kari_created_at`,`display_count`,`icon`,`session_id`,`lastlogin_at`,`created_at`,`updated_at`) VALUES
+-- ('','','','','','','','','','','','');
+-- INSERT INTO `budget` (`id`,`user_id`,`date`,`journal_id`,`price`,`summary`,`created_at`,`updated_at`) VALUES
+-- ('','','','','','','','');
+-- INSERT INTO `journal_subject` (`id`,`class_id`,`name`,`created_at`,`updated_at`) VALUES
+-- ('','','','','');
+-- INSERT INTO `auto_login` (`id`,`user_id`,`c_key`,`expire`,`created_at`,`updated_at`) VALUES
+-- ('','','','','','');
+-- INSERT INTO `contact` (`id`,`user_id`,`category_id`,`rs_id`,`created_at`,`updated_at`) VALUES
+-- ('','','','','','');
+-- INSERT INTO `transaction` (`id`,`user_id`,`content`,`created_at`,`updated_at`) VALUES
+-- ('','','','','');
+-- INSERT INTO `version` (`id`,`number`,`context`,`created_at`,`updated_at`) VALUES
+-- ('','','','','');
+-- INSERT INTO `journal` (`id`,`debit_id`,`credit_id`,`created_at`,`updated_at`) VALUES
+-- ('','','','','');
+-- INSERT INTO `timeline` (`id`,`contact_id`,`sender`,`context`,`created_at`,`updated_at`) VALUES
+-- ('','','','','','');
