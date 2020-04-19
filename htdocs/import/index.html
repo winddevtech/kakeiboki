@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="keywords" content="家計簿記, 家計簿, 簿記、複式簿記">
+<meta name="description" content="簿記のように家計簿をつけながら経済に強くなるアプリです。">
+<title>家計簿情報インポート設定 | 家計簿記</title>
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<link type="text/css" rel="stylesheet" href="../lib/jquery-ui/jquery-ui.min.css" />
+<link type="text/css" rel="stylesheet" href="../lib/font-awesome.min.css" />
+</head>
+<body>
+  <div id="wrapper">
+    <header id="header">
+      <div class="header-inner clearfix">
+        <h1 class="logo">
+          <a href="./">家計簿記</a>
+        </h1>
+        <nav class="gnav">
+          <ul>
+            <li id="js-gmenu-trigger"><a href="">メニュー</a></li>
+            <li><a href="../index/index.html">ログアウト</a></li>
+            <li><a href="../resign/">退会</a></li>
+            <li><a href="#">ヘルプ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="gmenu_area" id="gmenu_area">
+      <nav class="gmenu" id="js-gmenu">
+        <ul class="gmenu-box">
+          <li class="gmenu-item"><a href="../budget/">家計入力</a></li>
+          <li class="gmenu-item"><a href="../accounting/list">家計簿一覧</a></li>
+          <li class="gmenu-item"><a href="../accounting/calender.html">カレンダー表示</a></li>
+          <li class="gmenu-item"><a href="../accounting/tb.html">試算表</a></li>
+          <li class="gmenu-item gcurrent"><a href="../import/index.html">一括登録</a></li>
+          <li class="gmenu-item"><a href="../edit/">ユーザー設定</a></li>
+          <li class="gmenu-item"><a href="../contact/">お問い合わせ</a></li>
+          <span></span>
+        </ul>
+      </nav>
+    </div>
+    <div id="container">
+      <h2 class="title-h2">家計簿情報インポート設定</h2>
+      <div class="col-base col-630">
+        <form method="POST" enctype="multipart/form-data" class="form form-import"  id="form-import" action="confirm.html">
+          <p>インポートするCSVファイルをドラッグ＆ドロップ、<br />またはファイルを選択してくさい。</p>
+          <div class="form-control">
+            <i class="fa fa-upload form-upload-btn" aria-hidden="true"><input type="file" name="import_file" id="js-import_file" /></i><span id="filename">ファイルを選択して下さい</span>
+          </div>
+          <div class="form-control">
+            <label for="headerflg"><input type="checkbox" name="headerflg" id="headerflg" value="1" class="ctl-checkbox">
+              一行目をヘッダ行として処理する</label>
+          </div>
+          <input type="hidden" name="token" value="{$token}">
+          <div class="btn-row btn-single">
+            <input type="submit" value="データ検証" class="btn" id="js-submit">
+          </div>
+        </form>
+        <div class="download">
+          <a href="download/template.csv" download="template.csv">テンプレートファイルを利用する</a>
+        </div>
+      </div>
+    </div>
+    <!-- フッター -->
+    <footer id="footer">
+      <small>&copy; 2015 webdiv</small>
+    </footer>
+  </div>
+  <nav id="slideMenu">
+    <ul>
+      <li><a href="../budget/">家計入力</a></li>
+      <li><a href="../accounting/list">家計簿一覧</a></li>
+      <li><a href="../accounting/tb.html">試算表</a></li>
+      <li><a href="../import/index.html">一括登録</a></li>
+      <li><a href="../edit/">ユーザー設定</a></li>
+      <li><a href="../contact/">お問い合わせ</a></li>
+      <li><a href="../index/index.html">ログアウト</a></li>
+      <li><a href="../resign/">退会</a></li>
+      <li><a href="#">ヘルプ</a></li>
+    </ul>
+  </nav>
+  <div id="modal-overlay" class="modal-overlay"></div>
+  <div id="modal" class="modal">
+    <div class="modal-container" id="js-error-none">
+      <div class="modal-contents">
+        <p>データの検証が完了しました。<br>OK：ZZ件、NG：Z件<br>インポートボタンを押すと、OKのデータが登録されます</p>
+      </div>
+      <div class="btn-row btn-multi">
+        <input type="button" value="キャンセル" class="btn" id="js-btn-cancel">
+        <input type="submit" value="インポート" class="btn" id="js-btn-import">
+      </div>
+    </div>
+    <div class="modal-container" id="js-error-exist">
+      <div class="modal-contents">
+        <p id="js-error-msg"></p>
+      </div>
+      <div class="btn-row btn-single">
+        <input type="button" value="戻る" class="btn" id="js-btn-return">
+      </div>
+    </div>
+  </div>
+  <div class="toast-panel msg-success">
+    <p>ZZ件のデータのインポートが完了しました。</p>
+  </div>
+  <script src="../lib/jquery2.2.4.min.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/checker.js"></script>
+  <script src="../js/import.js"></script>
+  <script src="../js/modal.js"></script>
+  <script src="../js/toast.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+		RewriteEngine On
+		RewriteBase /kakeiboki7/app/
+
+		RewriteCond %{REQUEST_FILENAME} -f
+		RewriteRule \.(png|jpg|jpeg|gif|bmp|ico|css|js|eot|svg|ttf|woff|woff2|otf|ico)$ - [L]
+		RewriteRule /(.*) index.php [L]
+</IfModule>

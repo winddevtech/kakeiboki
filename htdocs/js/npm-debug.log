@@ -1,0 +1,96 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'gulp',
+1 verbose cli   '-g' ]
+2 info using npm@3.10.3
+3 info using node@v6.6.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData gulp
+8 silly fetchNamedPackageData gulp
+9 silly mapToRegistry name gulp
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry data Result {
+12 silly mapToRegistry   raw: 'gulp',
+12 silly mapToRegistry   scope: null,
+12 silly mapToRegistry   escapedName: 'gulp',
+12 silly mapToRegistry   name: 'gulp',
+12 silly mapToRegistry   rawSpec: '',
+12 silly mapToRegistry   spec: 'latest',
+12 silly mapToRegistry   type: 'tag' }
+13 silly mapToRegistry uri https://registry.npmjs.org/gulp
+14 verbose request uri https://registry.npmjs.org/gulp
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 01:27:21
+17 verbose request id 8c16012a383f7525
+18 http request GET https://registry.npmjs.org/gulp
+19 info retry will retry, error on last attempt: Error: connect EACCES 151.101.88.162:443 - Local (0.0.0.0:55592)
+20 info attempt registry request try #2 at 01:27:31
+21 http request GET https://registry.npmjs.org/gulp
+22 info retry will retry, error on last attempt: Error: connect EACCES 151.101.88.162:443 - Local (0.0.0.0:55600)
+23 info attempt registry request try #3 at 01:28:31
+24 http request GET https://registry.npmjs.org/gulp
+25 silly fetchPackageMetaData Error: connect EACCES 151.101.88.162:443 - Local (0.0.0.0:55698)
+25 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1036:11)
+25 silly fetchPackageMetaData     at exports._exceptionWithHostPort (util.js:1059:20)
+25 silly fetchPackageMetaData     at connect (net.js:874:16)
+25 silly fetchPackageMetaData     at net.js:1003:7
+25 silly fetchPackageMetaData     at GetAddrInfoReqWrap.asyncCallback [as callback] (dns.js:62:16)
+25 silly fetchPackageMetaData     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:81:10)
+25 silly fetchPackageMetaData  error for gulp { Error: connect EACCES 151.101.88.162:443 - Local (0.0.0.0:55698)
+25 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1036:11)
+25 silly fetchPackageMetaData     at exports._exceptionWithHostPort (util.js:1059:20)
+25 silly fetchPackageMetaData     at connect (net.js:874:16)
+25 silly fetchPackageMetaData     at net.js:1003:7
+25 silly fetchPackageMetaData     at GetAddrInfoReqWrap.asyncCallback [as callback] (dns.js:62:16)
+25 silly fetchPackageMetaData     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:81:10)
+25 silly fetchPackageMetaData   code: 'EACCES',
+25 silly fetchPackageMetaData   errno: 'EACCES',
+25 silly fetchPackageMetaData   syscall: 'connect',
+25 silly fetchPackageMetaData   address: '151.101.88.162',
+25 silly fetchPackageMetaData   port: 443 }
+26 silly rollbackFailedOptional Starting
+27 silly rollbackFailedOptional Finishing
+28 silly runTopLevelLifecycles Starting
+29 silly runTopLevelLifecycles Finishing
+30 silly install printInstalled
+31 verbose stack Error: connect EACCES 151.101.88.162:443 - Local (0.0.0.0:55698)
+31 verbose stack     at Object.exports._errnoException (util.js:1036:11)
+31 verbose stack     at exports._exceptionWithHostPort (util.js:1059:20)
+31 verbose stack     at connect (net.js:874:16)
+31 verbose stack     at net.js:1003:7
+31 verbose stack     at GetAddrInfoReqWrap.asyncCallback [as callback] (dns.js:62:16)
+31 verbose stack     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:81:10)
+32 verbose cwd C:\Dropbox\develop_htdocs\htdocs9\js
+33 error Windows_NT 6.1.7601
+34 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "gulp" "-g"
+35 error node v6.6.0
+36 error npm  v3.10.3
+37 error code EACCES
+38 error errno EACCES
+39 error syscall connect
+40 error Error: connect EACCES 151.101.88.162:443 - Local (0.0.0.0:55698)
+40 error     at Object.exports._errnoException (util.js:1036:11)
+40 error     at exports._exceptionWithHostPort (util.js:1059:20)
+40 error     at connect (net.js:874:16)
+40 error     at net.js:1003:7
+40 error     at GetAddrInfoReqWrap.asyncCallback [as callback] (dns.js:62:16)
+40 error     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:81:10)
+40 error  { Error: connect EACCES 151.101.88.162:443 - Local (0.0.0.0:55698)
+40 error     at Object.exports._errnoException (util.js:1036:11)
+40 error     at exports._exceptionWithHostPort (util.js:1059:20)
+40 error     at connect (net.js:874:16)
+40 error     at net.js:1003:7
+40 error     at GetAddrInfoReqWrap.asyncCallback [as callback] (dns.js:62:16)
+40 error     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:81:10)
+40 error   code: 'EACCES',
+40 error   errno: 'EACCES',
+40 error   syscall: 'connect',
+40 error   address: '151.101.88.162',
+40 error   port: 443 }
+41 error Please try running this command again as root/Administrator.
+42 verbose exit [ 1, true ]

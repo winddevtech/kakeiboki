@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="keywords" content="家計簿記, 家計簿, 簿記、複式簿記">
+<meta name="description" content="簿記のように家計簿をつけながら経済に強くなるアプリです。">
+<title>ログイン | 家計簿記</title>
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div id="wrapper">
+    <header id="header">
+      <div class="header-inner clearfix">
+        <h1 class="logo">
+          <a href="./">家計簿記</a>
+        </h1>
+        <nav class="gnav">
+          <ul>
+            <li><a href="../signup/index.html">新規登録</a></li>
+            <li><a href="#">ヘルプ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div id="container">
+      <div class="col-base col-1200 fv">
+        <div class="fv-intro">
+          <img src="../images/fv.jpg" width="150" height="100" alt="">
+        </div>
+        <p>簿記のように家計簿をつけながら経済に強くなるアプリです。</p>
+        <div class="fv-form">
+          <form method="POST" class="form form-login">
+            <fieldset>
+              <div class="formcontrol">
+                <label for="email" class="hidden">Email</label>
+                <input type="text" name="email" id="email" placeholder="Email" class="ctl-text">
+                <span class="help-block">Emailを入力して下さい。</span>
+              </div>
+              <div class="formcontrol">
+                <label for="password" class="hidden">パスワード</label>
+                <input type="password" name="password" id="password" placeholder="パスワード" class="ctl-password">
+                <span class="help-block">パスワードを入力して下さい。</span>
+              </div>
+              <div class="formcontrol">
+                <label for="auto_login"> <input type="checkbox" name="auto_login" id="auto_login" class="ctl-checkbox">
+                  次回から自動ログインする
+                </label>
+              </div>
+              <input type="hidden" name="token" value="{$token}">
+            </fieldset>
+            <div class="btn-row btn-single">
+              <input type="submit" value="ログイン" class="btn" id="js-submit">
+            </div>
+          </form>
+          <div class="link"><a class="text-brown" href="../auth/">パスワードを忘れた方はこちら</a></div>
+        </div>
+        <div class="fv-version">
+          <a href="../version/">更新履歴</a>
+        </div>
+      </div>
+    </div>
+    <!-- フッター -->
+    <footer id="footer">
+      <small>&copy; 2015 webdiv</small>
+    </footer>
+  </div>
+  <nav id="slideMenu">
+    <ul>
+      <li><a href="../signup/index.html">新規登録</a></li>
+      <li><a href="#">ヘルプ</a></li>
+    </ul>
+  </nav>
+  <script src="../lib/jquery2.2.4.min.js"></script>
+  <script src="../js/checker.js"></script>
+  <script src="../js/user.js"></script>
+  <script src="../js/common.js"></script>
+</body>
+</html>

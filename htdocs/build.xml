@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="test" default="all">
+
+	<!-- Rubyのインストールフォルダ(binフォルダ）を指定する -->
+	<property name="ruby.bin" value="C:\Ruby22\bin" />
+
+	<target name="compass">
+		<exec executable="${ruby.bin}\ruby" failonerror="true">
+			<arg value="${ruby.bin}\compass" />
+			<arg value="compile" />
+			<arg value="-s" />
+			<arg value="expanded" />
+		</exec>
+	</target>
+
+	<target name="all" depends="compass">
+	</target>
+
+</project>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="keywords" content="家計簿記, 家計簿, 簿記、複式簿記">
+  <meta name="description" content="簿記のように家計簿をつけながら経済に強くなるアプリです。">
+  <title>新規登録 | 家計簿記</title>
+  <link type="text/css" rel="stylesheet" href="../css/style.css">
+  <link type="text/css" rel="stylesheet" href="../lib/font-awesome.min.css">
+</head>
+<body>
+  <div id="wrapper">
+    <header id="header">
+      <div class="header-inner clearfix">
+        <h1 class="logo">
+          <a href="./">家計簿記</a>
+        </h1>
+        <nav class="gnav">
+          <ul>
+            <li><a href="#">ヘルプ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div id="container">
+      <h2 class="title-h2">新規登録</h2>
+      <ol class="step">
+        <li class="step-item step-prog">内容入力</li>
+        <li class="step-span">&raquo;</li>
+        <li class="step-item">確認</li>
+        <li class="step-span">&raquo;</li>
+        <li class="step-item">登録完了</li>
+      </ol>
+      <div class="col-base col-630">
+        <form method="POST" action="confirm.html" class="form">
+          <small class="annotation">※は入力必須項目です</small>
+          <fieldset>
+            <table class="table-responsive">
+              <tbody>
+                <tr>
+                  <th><span class="required">※</span><label for="user_name">ユーザー名<span>（20文字以内）</span></label></th>
+                  <td><input type="text" name="user_name" id="user_name" class="ctl-text" value="" placeholder="ユーザー名" /> <span class="help-block">ユーザー名は全角半角合わせて20文字以内で入力して下さい。</span></td>
+                </tr>
+                <tr>
+                  <th><span class="required">※</span><label for="email">Email<span>（半角50文字以内）</span></label></th>
+                  <td><input type="text" name="email" id="email" class="ctl-text" value="" placeholder="Email" /> <span class="help-block">メールアドレスは100文字以内で入力して下さい。</span></td>
+                </tr>
+                <tr>
+                  <th><span class="required">※</span><label for="password">パスワード<span>（8文字以上30文字以内）</span></label></th>
+                  <td><input type="password" name="password" id="password" class="ctl-password" placeholder="パスワード" /> <span class="help-block">パスワードは8文字以上30文字以内で入力して下さい。</span></td>
+                </tr>
+                <tr>
+                  <th><span class="required">※</span><label for="password_conf">確認用パスワード</label></th>
+                  <td><input type="password" name="password_conf" class="ctl-password" id="password_conf" placeholder="確認用パスワード" /> <span class="help-block">パスワードは8文字以上30文字以内で入力して下さい。</span></td>
+                </tr>
+                <tr>
+                  <th><span class="required">※</span><label for="display_count">表示件数</label></th>
+                  <td><select name="display_count" id="display_count" class="ctl-select display_count">
+                      <option value="count1">10</option>
+                      <option value="count2">20</option>
+                      <option value="count3">25</option>
+                      <option value="count4">30</option>
+                      <option value="count5">50</option>
+                      <option value="count6">100</option>
+                    </select><span class="display_count_unit">件/1ページ</span><span class="help-block">不正な表示件数が設定されています。</span></td>
+                </tr>
+                <tr>
+                  <th><label for="icon_img">アイコン画像</label></th>
+                  <td>
+                    <div class="upload"><i class="fa fa-upload upload-icon" aria-hidden="true"><input type="file" name="upload-btn" id="js-upload_btn" class="upload-btn"></i><span id="js-filename" class="upload-name">ファイルを選択して下さい</span></div>
+                    <canvas class="icon-canvas"></canvas>
+                    <input type="hidden" name="icon_img" id="js-post_icon_img">
+                    <div class="icon-img" id="js-icon_img"><img src="../images/default.png" width="50" height="50" alt=""></div>
+                    <input type="button" value="リセット" class="btn btn-reset" id="js-icon_reset">
+                    <svg id="js-progress-body" class="progress-body" viewPort="0 0 200 3" width="300" height="10" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                      <path class="progress-bar" d="M 0 1 L 300 1" stroke="#e0e0e0" />
+                      <path id="js-progress-bar" class="progress-bar" d="M 0 1 L 300 1" stroke="#d9534f" stroke-dasharray="300" style="stroke-dashoffset: 300px;" />
+                    </svg>
+                    <span class="help-block">使用できる画像はjpeg、png、gif形式のみです。</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- <input type="hidden" name="userId" value="{$userId}" /> -->
+            <input type="hidden" name="token" value="{$token}" />
+          </fieldset>
+          <div class="btn-row btn-single">
+            <input type="submit" value="確認" class="btn" id="js-submit" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- フッター -->
+    <footer id="footer">
+      <small>&copy; 2015 webdiv</small>
+    </footer>
+  </div>
+  <nav id="slideMenu">
+    <ul>
+      <li><a href="#">ヘルプ</a></li>
+    </ul>
+  </nav>
+  <script src="../lib/jquery2.2.4.min.js"></script>
+  <script src="../js/checker.js"></script>
+  <script src="../js/user.js"></script>
+  <script src="../js/icon.js"></script>
+  <script src="../js/common.js"></script>
+</body>
+
+</html>

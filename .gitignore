@@ -1,0 +1,4 @@
+node_modules/
+app/view/templates_c/
+app_ad/view/templates_c/
+app/config/config.php

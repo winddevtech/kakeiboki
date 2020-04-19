@@ -1,0 +1,25 @@
+@charset 'UTF-8';
+
+.ballon-item{
+  transform: translateY(100px);
+  opacity:0;
+  &.show{
+    animation-name:timeline01;
+    animation-duration:.5s;
+    animation-timing-function:linear;
+    animation-iteration-count:1;
+    animation-direction:normal;
+    transform: translateY(0);
+	  opacity:1;
+  }
+}
+@keyframes timeline01 {
+  from {
+	  transform: translateY(100px);
+	  opacity:0;
+	}
+	to {
+	  transform: translateY(0);
+	  opacity:1;
+	}
+}

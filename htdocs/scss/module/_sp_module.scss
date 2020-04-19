@@ -1,0 +1,1093 @@
+@charset 'UTF-8';
+
+/*.text-red {
+  color: #f00;
+}*/
+
+.logo {
+  float: left;
+  margin: 11px 0 0 5px;
+  width: auto;
+}
+
+.ctl-password , .ctl-text{
+  box-sizing: border-box;
+  padding: 3px;
+  width: 100%;
+}
+.ctl-checkbox {
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+}
+.ctl-select{
+  height: 1.75em;
+  width: 100%;
+}
+.ctl-textarea{
+  width: 100%;
+}
+
+.text-brown {
+  color: #800;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+
+.box-large,
+.box-middle,
+.box-small {
+  margin: 0 auto;
+}
+.box-small {
+  width: 350px;
+}
+.box-middle {
+  width: 700px;
+}
+
+.title-h2 {
+  margin: 0 0 3% 10%;
+  width: 75%;
+}
+.login-title_ad {
+  margin: 15px 0;
+  text-align: center;
+}
+.fv {
+  position: relative;
+  z-index: 1;
+  .fv-intro {
+    background: url(../images/fv.jpg) no-repeat;
+    background-size: cover;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    height: auto;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+    img {
+      border-radius: 5px;
+      min-height: 400px;
+    }
+  }
+  > p {
+    font:  {
+      size: 2.5em;
+      weight: bold;
+    }
+    line-height: 1.1;
+    position: absolute;
+    z-index: 2;
+    top: 2%;
+    left: 3%;
+    max-width: 94%;
+  }
+  .fv-version {
+    width: 100%;
+    margin: 5% auto;
+    text-align: center;
+    > a {
+      font-weight: bold;
+      display: inline-block;
+      min-width: 50px;
+      max-width: 100%;
+      color: #000;
+    }
+  }
+}
+
+.fv-form a:hover, .fv-version > a:hover {
+  text-decoration: underline;
+}
+.fv .fv-form {
+  margin-top: 16%;
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  z-index: 2;
+}
+
+/*フォーム*/
+.form {
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 100%;
+}
+.form-free {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 5px;
+}
+.form-login {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 5px 20px;
+}
+.fv-form {
+  .form, .link {
+    max-width: 300px;
+  }
+  .form {
+    border-radius: 8px;
+    padding: 5px 20px;
+    > h2 {
+      text-align: center;
+    }
+  }
+  .link {
+    margin: 10px auto 0;
+  }
+}
+.form-auth {
+  margin: 0 auto;
+  max-width: 300px;
+  width: 100%;
+  .form {
+    border-radius: 8px;
+    padding: 5px 20px;
+  }
+}
+.form-search {
+  border: 1px solid #00796b;
+  border-radius: 7px;
+  width: 300px;
+  padding: 10px;
+  position: relative;
+  .formcontrol {
+    label{
+      padding-right: 5px;
+    }
+  }
+}
+.off-left{
+  position: absolute;
+  left: -9999em;
+}
+.upload{
+  display: inline-block;
+  .upload-icon {
+    font-size: 35px;
+    margin-right: 10px;
+    position: relative;
+    vertical-align: middle;
+    z-index: 1;
+  }
+  .upload-btn{
+    cursor: pointer;
+    opacity: 0;
+    height: 35px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-indent: -9999px;
+    top: 0;
+    width: 35px;
+    z-index: 2;
+  }
+  .upload-name{
+    font-size: 15px;
+    vertical-align: middle;
+  }
+}
+.icon-img{
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 50px;
+  overflow: hidden;
+  vertical-align: middle;
+  width: 50px;
+  &.icon-img--state_active{
+    border: 0;
+  }
+}
+.icon-canvas{
+  display: none;
+}
+.icon{
+  height: 50px;
+  width: 50px;
+}
+.progress-body{
+  display: none;
+  margin-top: 15px;
+  &.show{
+    display: block;
+  }
+}
+
+/*入力カウンター*/
+.counterRow {
+  font-size: 14px;
+  span {
+    color: #f00;
+  }
+}
+
+.list{
+  width: 100%;
+  .list-head {
+    background-color: #c1f2ad;
+  }
+  .list-col{
+    box-sizing: border-box;
+  }
+  &.list-version{
+    .list-head {
+      .list-col{
+        &:nth-child(1){
+          width: 17%;
+        }
+        &:nth-child(2){
+          width: 19%;
+        }
+        &:nth-child(3){
+          width: 64%;
+        }
+      }
+    }
+  }
+
+  &.list-budget {
+    .list-head {
+      .list-col{
+        display: inline-block;
+        float: left;
+        height: auto;
+        padding: 10px;
+        width: 25%;
+        &:first-child{
+          display: none;
+        }
+        &:nth-child(5)::after{
+          content:' ';
+          display:block;
+          clear:both;
+        }
+        &:nth-child(n + 6){
+          display: none;
+        }
+      }
+    }
+    .list-body {
+      .list-row{
+        display: block;
+        border:{
+          left:1px solid;
+          right:1px solid;
+          top:1px solid;
+        }
+        &:last-child{
+          border-bottom: 1px solid;
+        }
+        .list-col{
+          display: list-item;
+          border: none;
+          width: 100%;
+          &:nth-child(1) {
+            background: rgb(76, 175, 80);
+            color: #fff;
+            list-style-type: none;
+          }
+          &:nth-child(n + 2):nth-child(-n+5) {
+            margin-left: 5%;
+            padding-left: 0;
+            &:before{
+              padding-right: 1%;
+            }
+          }
+          &:nth-of-type(2):before{
+            content: '[家計発生日]';
+          }
+          &:nth-of-type(3):before{
+            content: '[用途]';
+          }
+          &:nth-of-type(4):before{
+            content: '[金額]';
+          }
+          &:nth-of-type(5):before{
+            content: '[摘要]';
+          }
+          &:nth-child(n + 6) {
+            display: inline-block;
+            list-style-type: none;
+            width: 49%;
+          }
+        }
+      }
+    }
+  }
+
+  &.list-contact {
+    .list-head {
+      .list-col{
+        display: inline-block;
+        float: left;
+        padding: 10px 0;
+        width: 25%;
+        &:first-child{
+          display: none;
+        }
+        &:nth-child(5)::after{
+          content:' ';
+          display:block;
+          clear:both;
+        }
+        &:nth-child(n + 6){
+          display: none;
+        }
+      }
+    }
+    .list-body {
+      .list-row{
+        border:{
+          left:1px solid;
+          right:1px solid;
+          top:1px solid;
+        }
+        display: block;
+        &:last-child{
+          border-bottom: 1px solid;
+        }
+        .list-col{
+          display: list-item;
+          border: none;
+          &:nth-child(1) {
+            background: rgb(76, 175, 80);
+            color: #fff;
+            list-style-type: none;
+          }
+          &:nth-child(n + 2):nth-child(-n+5) {
+            margin-left: 5%;
+            padding-left: 0;
+            &:before{
+              padding-right: 1%;
+            }
+          }
+          &:nth-of-type(2):before{
+            content: '[登録日]';
+          }
+          &:nth-of-type(3):before{
+            content: '[ステータス]';
+          }
+          &:nth-of-type(4):before{
+            content: '[カテゴリ]';
+          }
+          &:nth-of-type(5):before{
+            content: '[内容]';
+          }
+          &:nth-child(n + 6) {
+            list-style-type: none;
+          }
+        }
+      }
+    }
+  }
+
+  &.list-reply {
+    .list-head {
+      .list-col{
+        display: inline-block;
+        float: left;
+        padding: 10px 0;
+        width: 25%;
+        &:first-child{
+          display: none;
+        }
+        &:nth-child(5)::after{
+          content:' ';
+          display:block;
+          clear:both;
+        }
+        &:nth-child(n + 6){
+          display: none;
+        }
+      }
+    }
+    .list-body {
+      .list-row{
+        border:{
+          left:1px solid;
+          right:1px solid;
+          top:1px solid;
+        }
+        display: block;
+        &:last-child{
+          border-bottom: 1px solid;
+        }
+        .list-col{
+          display: list-item;
+          border: none;
+          &:nth-child(1) {
+            background: rgb(76, 175, 80);
+            color: #fff;
+            list-style-type: none;
+          }
+          &:nth-child(n + 2):nth-child(-n+5) {
+            margin-left: 5%;
+            padding-left: 0;
+            &:before{
+              padding-right: 1%;
+            }
+          }
+          &:nth-of-type(2):before{
+            content: '[登録日]';
+          }
+          &:nth-of-type(3):before{
+            content: '[最新更新日]';
+          }
+          &:nth-of-type(4):before{
+            content: '[ユーザー]';
+          }
+          &:nth-of-type(5):before{
+            content: '[ステータス]';
+          }
+          &:nth-child(n + 6) {
+            list-style-type: none;
+          }
+        }
+      }
+    }
+  }
+
+  &.list-closeing {
+    .tb-item_col{
+      text-align: center;
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .list {
+    &.list-budget {
+      .list-head {
+        .list-col{
+          height: 42px;
+          padding-top: 14px;
+        }
+      }
+    }
+  }
+}
+
+.outputDate,.outputResult {
+  float: right;
+}
+.outputDate {
+  padding: 10px 0;
+  text-align: right;
+  width: 40%;
+}
+.outputResult {
+  padding: 10px 0;
+}
+
+
+.complete {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 630px;
+  .button-row {
+    width: 220px;
+  }
+}
+
+/*カレンダーボタン*/
+.ui-datepicker-trigger{
+    border:none;
+    background:none;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 5px;
+    vertical-align: top;
+ }
+
+/*ステップナビ*/
+.step {
+  counter-reset: steps;
+  font-size: 12px;
+  margin: 0 auto;
+  max-width: 500px;
+  overflow: hidden;
+  padding: 5% 0;
+  text-align: center;
+  width: 100%;
+  li {
+    float: left;
+    line-height: 3.3;
+  }
+  .step-span {
+    font-size: 25px;
+  }
+  .step-item {
+    width: 29.7%;
+    &::before {
+      border: 1px solid #fb8c00;
+      border-radius: 21px;
+      counter-increment: steps;
+      content: counter(steps);
+      display: block;
+      height: 40px;
+      margin: 0 auto 10px;
+      width: 40px;
+    }
+  }
+  .step-prog::before {
+    background-color: #ffcc80;
+  }
+  .step-span-prog{
+    color: #f4511e;
+  }
+}
+
+/*要素を非表示*/
+.hidden{
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+/*決算書*/
+.financial{
+  border: 1px solid #c1f2ad;
+  overflow: hidden;
+}
+.financial-title{
+  background: #bbf2ad;
+  overflow: hidden;
+  padding: 1% 0;
+  text-align: center;
+  li{
+    border-right: 1px solid #eee;
+    box-sizing: border-box;
+    float: left;
+    font:{
+      size:1.1em;
+      weight:bold;
+    }
+    width: 25%;
+
+    &:last-child{
+      border: 0;
+    }
+  }
+}
+.financial-listbox{
+  overflow: hidden;
+  .financial-list{
+    float: left;
+    width: 50%;
+    dt, dd{
+      border-right: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      box-sizing: border-box;
+      padding: 2%;
+      width: 50%;
+    }
+    dt{
+      float: left;
+      text-align: center;
+    }
+    dd{
+      margin-left: 50%;
+      text-align: right;
+    }
+    &:last-child{
+      dd{
+        border-right: 0;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 470px) {
+  .financial-listbox{
+    .financial-list{
+      dt, dd{
+        height: 28px;
+      }
+    }
+  }
+}
+.paginationBox {
+	margin: 1em auto;
+	text-align: center;
+}
+.pagination {
+  display: inline-block;
+  padding-left: 0;
+  border-radius: 4px;
+  > li {
+    display: inline;
+    > a, > span {
+      position: relative;
+      float: left;
+      padding: 6px 12px;
+      margin-left: -1px;
+      line-height: 1.42857143;
+      color: #337ab7;
+      text-decoration: none;
+      background-color: #fff;
+      border: 1px solid #ddd;
+    }
+    &:first-child{
+      > a, > span {
+       margin-left: 0;
+       border-top-left-radius: 4px;
+       border-bottom-left-radius: 4px;
+     }
+    }
+    &:last-child{
+      > a, > span {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+      }
+    }
+    > a:hover, > span:hover, > a:focus, > span:focus {
+      color: #23527c;
+      background-color: #eee;
+      border-color: #ddd;
+    }
+  }
+  > .active{
+    > a,> span,> a:hover,> span:hover,> a:focus,> span:focus {
+      color: #fff;
+      cursor: default;
+      background-color: #337ab7;
+      border-color: #337ab7;
+    }
+  }
+  > .disabled {
+    > span, > span:hover,> span:focus,> a,> a:hover,> a:focus {
+      color: #777;
+      cursor: not-allowed;
+      background-color: #fff;
+      border-color: #ddd;
+    }
+  }
+}
+
+
+
+
+.formcontrol {
+  height: auto;
+  margin: 10px auto;
+  width: 100%;
+}
+
+/*テーブルレスポンシブ*/
+.table-responsive{
+  td, th{
+    display: block;
+    font-size: 1.2em;
+  }
+}
+
+
+.date{
+  max-width: 75px;
+}
+.form-item-small{
+  max-width: 100px;
+}
+.form-item-large{
+  max-width: 275px;
+}
+.budget-item{
+  max-width: 200px;
+}
+.display_count{
+  max-width: 100px;
+}
+.date-select{
+  max-width: 100px;
+}
+
+/*ボタン*/
+.btn {
+  font-size: 12px;
+  display: inline-block;
+  padding: 9px 15px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #469df5;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  background: -moz-linear-gradient(center top, #79bbff 15%, #4197ee 90%);
+  background: -ms-linear-gradient(top, #79bbff 15%, #4197ee 90%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(15%, #79bbff), color-stop(90%, #4197ee));
+  background-color: #79bbff;
+  -webkit-box-shadow: inset 1px 1px 0 0 #cae3fc;
+  -moz-box-shadow: inset 1px 1px 0 0 #cae3fc;
+  box-shadow: inset 1px 1px 0 0 #cae3fc;
+  text-shadow: 1px 1px 0 #287ace;
+  width: 100%;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=  '#79bbff', endColorstr='#4197ee');
+  &.btn-reset{
+    width: 80px;
+  }
+}
+.btn:hover {
+  background: -moz-linear-gradient(center top, #4197ee 15%, #79bbff 90%);
+  background: -ms-linear-gradient(top, #4197ee 15%, #79bbff 90%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(15%, #4197ee), color-stop(90%, #79bbff));
+  background-color: #4197ee;
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=  '#4197ee', endColorstr='#79bbff');
+}
+.btn-row {
+  margin: 10px auto;
+  text-align: center;
+}
+.btn-single {
+  max-width: 250px;
+  width: 100%;
+}
+.btn-multi {
+  .btn {
+    max-width: 200px;
+    margin: 0 5px;
+    width: 45%;
+  }
+}
+
+.help-block {
+  color: #f00;
+  display: block;
+  font:  {
+    size: .9em;
+    weight: bold;
+  }
+  margin-top: 3px;
+}
+.msg-err, .msg-info, .msg-success {
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin: 0 auto 20px;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+}
+.msg-info {
+  background: #d9edf7;
+  border: 1px solid #bce8f1;
+  color: #0b3fd2;
+}
+.msg-success {
+  background: #dff0d8;
+  border: 1px solid #d6e9c6;
+  color: #448c6c;
+}
+.msg-err {
+  background: #f2dede;
+  border: 1px solid #ebccd1;
+  color: #f00;
+}
+.annotation {
+  color: #f00;
+  display: block;
+  font-size: small;
+}
+
+input,select,textarea {
+  border-radius: 5px;
+  outline: none;
+}
+.form-import {
+  border: 3px dotted $color1;
+  border-radius: 7px;
+  width: 90%;
+  p {
+    font: {
+      size: 1em;
+      weight: bold;
+    }
+    margin: 5px auto;
+    max-width: 475px;
+    text-align: center;
+    width: 90%;
+  }
+  .form-control {
+    margin: 4% auto;
+    text-align: center;
+  }
+  .form-upload-btn {
+    font-size: 35px;
+    margin-right: 10px;
+    position: relative;
+    vertical-align: middle;
+    z-index: 1;
+    input {
+      cursor: pointer;
+      opacity: 0;
+      height: 35px;
+      left: 0;
+      position: absolute;
+      right: 0;
+      text-indent: -9999px;
+      top: 0;
+      width: 35px;
+      z-index: 2;
+    }
+  }
+}
+.download {
+  margin: 10px auto 0;
+  text-align: right;
+  width: 90%;
+  > a {
+    color: $color2;
+    margin-right: 20px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.hover{
+  border: 3px dotted #43a047;
+  opacity: .5;
+}
+
+//カレンダー
+.calendar{
+  //animation: huerotator 5s infinite alternate;
+  background: linear-gradient(45deg, #999 0%, #bbb 100%);
+  //background: linear-gradient(45deg, #a6d900 0%, #ff4454 100%);
+  border-radius: 4px;
+  color: #fff;
+  margin: 0 auto;
+  min-height: 290px;
+  overflow: hidden;
+  width: 95%;
+  .cal-item-red{
+    color: #f00;
+  }
+  .cal-item-blue{
+    color: #00f;
+  }
+}
+
+.calendar{
+  position: relative;
+  .loadbox{
+    .loadbox-image{
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 100px;
+      height: 50px;
+      width: 50px;
+    }
+  }
+}
+.cal-head, .cal-body{
+  opacity:0;
+  position: relative;
+  right: -100px;
+}
+.cal-head{
+  display: none;
+}
+.cal-body{
+  .cal-item {
+    box-shadow: inset 0 -1px rgba(255,255,255,0.2) !important;
+    padding: 3%;
+    .cal-day{
+      font-size: 1.5em;
+      display: inline-block;
+      width: 5%;
+    }
+    .cal-week{
+      padding-left: 0.5em;
+    }
+    .cal-num{
+      float: right;
+      text-decoration: underline;
+      margin-top: 1%;
+      padding-right: 1em;
+      &:hover{
+        text-decoration: none;
+      }
+      a{
+        color: #fff;
+      }
+    }
+  }
+}
+
+//カレンダー出力月
+.outputdate-container{
+  text-align: right;
+  .outputdate-container-inner{
+    display: inline-block;
+    margin-right: 7%;
+    min-width: 160px;
+    width: 40%;
+  }
+}
+
+//決算書動作
+.closeing-container{
+  overflow: hidden;
+}
+.closeing{
+  opacity:0;
+  position: relative;
+  bottom: -100px;
+}
+
+
+.timeline-head{
+  display: none;
+  margin: 0 5%;
+  .timeline-head__label, .timeline-head__category{
+    display: inline;
+  }
+}
+
+.ballon{
+  margin: 5% 5% 0;
+}
+.ballon-title {
+  margin-bottom: 10%;
+}
+.ballon-time{
+  position: absolute;
+  top: -20px;
+}
+.ballon-item{
+  margin: 18% 0 0;
+  position: relative;
+}
+.ballon-image{
+  border-radius: 4px;
+  left: 0;
+  max-width: 50px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 13%;
+  img{
+    vertical-align: bottom;
+  }
+}
+
+.ballon-text{
+  border: 1px solid #757575;
+  border-radius: 4px;
+  margin: 0 0 0 70px;
+  min-height: 1em;
+  padding: 1em;
+  position: relative;
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top:15px;
+  }
+  &:before{
+    border: 10px solid transparent;
+    border-right-color: #757575;
+    left: -20px;
+  }
+  &:after {
+    border: 10px solid transparent;
+    border-right-color: #fff;
+    left: -19px;
+  }
+  p{
+    line-height: 1.4;
+  }
+}
+.timeline-btn{
+  display: none;
+  text-align: center;
+  margin: 20px auto 0;
+  max-width: 870px;
+}
+.is-reverse {
+  .ballon-image {
+    left: auto;
+    right: 0;
+  }
+  .ballon-time{
+    right: 0;
+  }
+  .ballon-text{
+    margin: 0 70px 0 0;
+    &:before{
+      border-left-color: #757575;
+      border-right-color: transparent;
+      left: auto;
+      right: -20px;
+    }
+    &:after{
+      border-left-color: #fff;
+      border-right-color: transparent;
+      left: auto;
+      right: -19px;
+    }
+  }
+}
+.btn{
+  &.btn-middle{
+    width: 250px;
+  }
+}
+
+
+
+.required{
+  color: #f00;
+  font-size: 10px;
+}
+
+
+.searchbox{
+  margin: 0 auto;
+  padding: 15px;
+  position: relative;
+  width: 300px;
+  .searchbox-keyword{
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0 0 4px 0 #2e7d32;
+    font-size: 14px;
+    height: 30px;
+    letter-spacing: 1px;
+    padding: 0 50px 0 15px;
+    width: 100%;
+  }
+  .searchbox-btn{
+    background: #e0e0e0;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    color: #757575;
+    cursor: pointer;
+    font-size: 16px;
+    height: 30px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 40px;
+  }
+  .off-left{
+    position: absolute;
+    left: -9999em;
+  }
+}
+
+
+.deleate_budget_id{
+  display: none;
+}

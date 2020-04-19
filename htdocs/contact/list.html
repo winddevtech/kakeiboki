@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="keywords" content="家計簿記, 家計簿, 簿記、複式簿記">
+<meta name="description" content="簿記のように家計簿をつけながら経済に強くなるアプリです。">
+<title>お問い合わせ一覧 | 家計簿記</title>
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<link type="text/css" rel="stylesheet" href="../lib/jquery-ui/jquery-ui.min.css" />
+<link type="text/css" rel="stylesheet" href="../lib/font-awesome.min.css" />
+</head>
+<body>
+  <div id="wrapper">
+    <header id="header">
+      <div class="header-inner clearfix">
+        <h1 class="logo">
+          <a href="./index.html">家計簿記</a>
+        </h1>
+        <div class="l-header-user">ようこそ てすとたろうあああああああああさん</div>
+        <nav class="gnav">
+          <ul>
+            <li id="js-gmenu-trigger"><a href="">メニュー</a></li>
+            <li><a href="../index/index.html">ログアウト</a></li>
+            <li><a href="../resign/index.html">退会</a></li>
+            <li><a href="#">ヘルプ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="gmenu_area" id="gmenu_area">
+      <nav class="gmenu" id="js-gmenu">
+        <ul class="gmenu-box">
+          <li class="gmenu-item"><a href="../budget/index.html">家計入力</a></li>
+          <li class="gmenu-item gcurrent"><a href="../accounting/list.html">家計簿一覧</a></li>
+          <li class="gmenu-item"><a href="../accounting/calender.html">カレンダー表示</a></li>
+          <li class="gmenu-item"><a href="../accounting/tb.html">試算表</a></li>
+          <li class="gmenu-item"><a href="../import/index.html">一括登録</a></li>
+          <li class="gmenu-item"><a href="../edit/index.html">ユーザー設定</a></li>
+          <li class="gmenu-item"><a href="../contact/list.html">お問い合わせ一覧</a></li>
+          <li class="gmenu-item"><a href="../contact/index.html">お問い合わせ</a></li>
+          <span></span>
+        </ul>
+      </nav>
+    </div>
+    <div id="container">
+      <h2 class="title-h2">お問い合わせ一覧</h2>
+      <div class="section">
+        <table id="lb-getlist" class="list list-contact">
+          <thead class="list-head">
+            <tr>
+              <th class="list-col">行数</th>
+              <th class="list-col"><a
+                href="?command=list-sem&amp;s=s_data_date&amp;o={$sortCommand}&amp;q={$searchQuery}">登録日<span
+                  class="glyphicon {if $sort_safe == 's_data_date'}{$arrowIcon}{/if}"></span></a></th>
+              <th class="list-col"><a
+                href="?command=list-sem&amp;s=s_account_name&amp;o={$sortCommand}&amp;q={$searchQuery}">最新更新日<span
+                  class="glyphicon {if $sort_safe == 's_account_name'}{$arrowIcon}{/if}"></span></a></th>
+              <th class="list-col"><a
+                    href="?command=list-sem&amp;s=s_account_name&amp;o={$sortCommand}&amp;q={$searchQuery}">カテゴリ<span
+                      class="glyphicon {if $sort_safe == 's_account_name'}{$arrowIcon}{/if}"></span></a></th>
+              <th class="list-col"><a
+                href="?command=list-sem&amp;s=s_bidding_price&amp;o={$sortCommand}&amp;q={$searchQuery}">内容<span
+                  class="glyphicon {if $sort_safe == 's_bidding_price'}{$arrowIcon}{/if}"></span></a></th>
+              <th class="list-col"></th>
+            </tr>
+          </thead>
+          <tbody class="accordion list-body">
+            <tr class="list-row">
+              <td class="list-col">1000</td>
+              <td class="list-col">2015/12/09</td>
+              <td class="list-col">2015/12/09</td>
+              <td class="list-col">家計簿記の利用方法</td>
+              <td class="list-col">あいうえおかきくけこあいうえお…</td>
+              <td class="list-col"><input type="button" value="詳細"
+                  onClick="location.href='?command=sem-input&amp;s_id={$row.s_id}'" class="btn" /></td>
+            </tr>
+            <tr class="list-row">
+              <td class="list-col">1000</td>
+              <td class="list-col">2015/12/09</td>
+              <td class="list-col">2015/12/09</td>
+              <td class="list-col">家計簿記の利用方法</td>
+              <td class="list-col">あいうえおかきくけこあいうえお…</td>
+              <td class="list-col"><input type="button" value="詳細"
+                  onClick="location.href='?command=sem-input&amp;s_id={$row.s_id}'" class="btn" /></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <nav class="paginationBox">
+        <ul class="pagination">
+          <li class="disabled"><a><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
+          <li class="active"><a href="?s=id&amp;o=asc&amp;page=1">1</a></li>
+          <li><a href="?s=id&amp;o=asc&amp;page=2">2</a></li><li><a href="?s=id&amp;o=asc&amp;page=3">3</a></li>
+          <li><a href="?s=id&amp;o=asc&amp;page=4">4</a></li><li><a href="?s=id&amp;o=asc&amp;page=5">5</a></li>
+          <li><a href="?s=id&amp;o=asc&amp;page=6">6</a></li><li><a href="?s=id&amp;o=asc&amp;page=7">7</a></li>
+          <li><a href="?s=id&amp;o=asc&amp;page=2"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- フッター -->
+    <footer id="footer">
+      <small>&copy; 2015 webdiv</small>
+    </footer>
+  </div>
+  <!-- ライトボックス -->
+  <div id="lb-background"></div>
+  <div id="lb-body">
+    <div id="lb-contents">
+      <p>選択した以下の家計簿情報を削除します。宜しいですか?</p>
+      <table>
+        <tbody>
+          <tr>
+            <th>家計発生日</th>
+            <td></td>
+          </tr>
+          <tr>
+            <th>用途</th>
+            <td></td>
+          </tr>
+          <tr>
+            <th>金額</th>
+            <td></td>
+          </tr>
+          <tr>
+            <th>摘要</th>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="btn-row btn-multi">
+        <input type="button" value="キャンセル" class="btn" id="lb-cancelBtn" />
+        <input type="button" value="削除" onClick="location.href='list'" class="btn" />
+      </div>
+    </div>
+    <a href="javascript:void(0);" id="lb-close"></a>
+  </div>
+  <nav id="slideMenu">
+    <ul>
+      <li><a href="../budget/index.html">家計入力</a></li>
+      <li><a href="../accounting/list.html">家計簿一覧</a></li>
+      <li><a href="../accounting/tb.html">試算表</a></li>
+      <li><a href="../import/index.html">一括登録</a></li>
+      <li><a href="../edit/index.html">ユーザー設定</a></li>
+      <li><a href="../contact/index.html">お問い合わせ</a></li>
+    </ul>
+    <ul>
+      <li><a href="../index/index.html">ログアウト</a></li>
+      <li><a href="../resign/index.html">退会</a></li>
+      <li><a href="#">ヘルプ</a></li>
+    </ul>
+  </nav>
+  <script src="../lib/jquery2.2.4.min.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/lightbox.js"></script>
+  <script src="../js/accordion.js"></script>
+  <script src="../lib/jquery-ui/jquery-ui.min.js"></script>
+  <script>
+    $(function() {
+      $('.datepicker').datepicker({
+        dateFormat : 'yy/mm/dd',
+        showOn : 'both',
+        buttonText: '<i class="fa fa-calendar" aria-hidden="true"></i>'
+      });
+    });
+  </script>
+
+</body>
+</html>

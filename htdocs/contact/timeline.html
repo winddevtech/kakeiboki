@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="keywords" content="家計簿記, 家計簿, 簿記、複式簿記">
+<meta name="description" content="簿記のように家計簿をつけながら経済に強くなるアプリです。">
+<title>お問い合わせ内容 | 家計簿記</title>
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<link type="text/css" rel="stylesheet" href="../lib/jquery-ui/jquery-ui.min.css" />
+<link type="text/css" rel="stylesheet" href="../lib/font-awesome.min.css" />
+</head>
+<body>
+  <div id="wrapper">
+    <header id="header">
+      <div class="header-inner clearfix">
+        <h1 class="logo">
+          <a href="./index.html">家計簿記</a>
+        </h1>
+        <div class="l-header-user">ようこそ てすとたろうあああああああああさん</div>
+        <nav class="gnav">
+          <ul>
+            <li id="js-gmenu-trigger"><a href="">メニュー</a></li>
+            <li><a href="../index/index.html">ログアウト</a></li>
+            <li><a href="../resign/index.html">退会</a></li>
+            <li><a href="#">ヘルプ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="gmenu_area" id="gmenu_area">
+      <nav class="gmenu" id="js-gmenu">
+        <ul class="gmenu-box">
+          <li class="gmenu-item"><a href="../budget/index.html">家計入力</a></li>
+          <li class="gmenu-item gcurrent"><a href="../accounting/list.html">家計簿一覧</a></li>
+          <li class="gmenu-item"><a href="../accounting/calender.html">カレンダー表示</a></li>
+          <li class="gmenu-item"><a href="../accounting/tb.html">試算表</a></li>
+          <li class="gmenu-item"><a href="../import/index.html">一括登録</a></li>
+          <li class="gmenu-item"><a href="../edit/index.html">ユーザー設定</a></li>
+          <li class="gmenu-item"><a href="../contact/index.html">お問い合わせ</a></li>
+          <span></span>
+        </ul>
+      </nav>
+    </div>
+    <div id="container">
+      <h2 class="title-h2">お問い合わせ内容</h2>
+      <div class="section">
+        <div id="js-timeline-head" class="timeline-head">
+          <p class="timeline-head__label">【カテゴリ】</p>
+          <p class="timeline-head__category">texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="ballon" id="js-ballon">
+          <!--<div class="ballon-item">
+            <div class="ballon-time">2016/10/10 10:00</div>
+            <div class="ballon-image"><img src="https://placehold.jp/50x50.png" width="50" height="50" alt="" ></div>
+            <div class="ballon-text"><p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p></div>
+          </div>
+          <div class="ballon-item is-reverse">
+            <div class="ballon-time">2016/10/10 10:00</div>
+            <div class="ballon-image"><img src="https://placehold.jp/50x50.png" width="50" height="50" alt="" ></div>
+            <div class="ballon-text"><p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p></div>
+          </div>
+          <div class="ballon-item">
+            <div class="ballon-image"><img src="https://placehold.jp/50x50.png" width="50" height="50" alt="" ></div>
+            <div class="ballon-text"><p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p></div>
+          </div>
+          <div class="ballon-item">
+            <div class="ballon-image"><img src="https://placehold.jp/50x50.png" width="50" height="50" alt="" ></div>
+            <div class="ballon-text"><p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p></div>
+          </div>
+          <div class="ballon-item is-reverse">
+            <div class="ballon-image"><img src="https://placehold.jp/50x50.png" width="50" height="50" alt="" ></div>
+            <div class="ballon-text"><p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p></div>
+          </div>-->
+        </div>
+        <div id="js-timeline-btn" class="timeline-btn"><input type="submit" value="返信入力" class="btn btn-middle" id="js-reply"></div>
+      </div>
+    </div>
+    <!-- フッター -->
+    <footer id="footer">
+      <small>&copy; 2015 webdiv</small>
+    </footer>
+  </div>
+  <nav id="slideMenu">
+    <ul>
+      <li><a href="../budget/index.html">家計入力</a></li>
+      <li><a href="../accounting/list.html">家計簿一覧</a></li>
+      <li><a href="../accounting/tb.html">試算表</a></li>
+      <li><a href="../import/index.html">一括登録</a></li>
+      <li><a href="../edit/index.html">ユーザー設定</a></li>
+      <li><a href="../contact/index.html">お問い合わせ</a></li>
+    </ul>
+    <ul>
+      <li><a href="../index/index.html">ログアウト</a></li>
+      <li><a href="../resign/index.html">退会</a></li>
+      <li><a href="#">ヘルプ</a></li>
+    </ul>
+  </nav>
+  <script src="../lib/jquery2.2.4.min.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/timeline.js"></script>
+  <script src="../js/modal_contact.js"></script>
+  <script>
+  $(function() {
+    $('#js-ballon').timeline({
+      'direction': 'vertical',
+      'delay': 500
+      //'date': document.getElementById('js-calender').value
+    });
+  });
+  </script>
+</body>
+</html>

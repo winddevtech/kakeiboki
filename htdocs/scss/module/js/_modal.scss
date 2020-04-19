@@ -1,0 +1,51 @@
+@charset 'UTF-8';
+
+.modal-overlay, .modal{
+  display: none;
+}
+.modal-overlay{
+  background-color: #000;
+  height: 100%;
+  left: 0;
+  opacity: .6;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.modal-contents{
+  line-height: 1.2;
+  text-align: center;
+}
+.modal{
+  background-color: #fafafa;
+  border-radius: 2px;
+  left: 0;
+  margin: 0 auto;
+  padding: 15px;
+  position: fixed;
+  right: 0;
+  top: 30px;
+  width: 50%;
+  z-index: 10;
+  &.modal-timeline{
+    max-width: 609px;
+   min-width: 300px;
+  }
+}
+
+.modal-form__title{
+  border:{
+    bottom: 1px solid #ddd;
+    left: 10px solid #ddd;
+  }
+  font:{
+    size:19px;
+    weight: bold;
+  }
+  line-height: 1.3;
+  margin: 10px auto 20px;
+  padding: 2px 5px 5px 10px;
+}
+.modal-form__counterRow{
+  text-align: left;
+}

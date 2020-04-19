@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,maximum-scale=1,user-scalable=no">
+<meta name="keywords" content="家計簿記, 家計簿, 簿記、複式簿記">
+<meta name="description" content="簿記のように家計簿をつけながら経済に強くなるアプリです。">
+<title>お問い合わせ内容 | 家計簿記</title>
+<link type="text/css" rel="stylesheet" href="../../css/style.css">
+<link type="text/css" rel="stylesheet" href="../../lib/jquery-ui/jquery-ui.min.css" />
+<link type="text/css" rel="stylesheet" href="../../lib/font-awesome.min.css" />
+</head>
+<body>
+  <div id="wrapper">
+    <header id="header">
+      <div class="header-inner clearfix">
+        <h1 class="logo">
+          <a href="./index.html">家計簿記</a>
+        </h1>
+        <nav class="gnav">
+          <ul>
+            <li class="gnav-item"><a href="list.html">返信一覧</a></li>
+            <li class="gnav-item"><a href="../index/index.html">ログアウト</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div id="container">
+      <h2 class="title-h2">お問い合わせ内容</h2>
+      <div class="section">
+        <div class="timeline-head">
+          <p class="timeline-head__label">【カテゴリ】</p>
+          <p class="timeline-head__category">texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="ballon" id="js-ballon">
+          <!--<div class="ballon-item">
+            <div class="ballon-time">2016/10/10 10:00</div>
+            <div class="ballon-image"><img src="https://placehold.jp/50x50.png" width="50" height="50" alt="" ></div>
+            <div class="ballon-text"><p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p></div>
+          </div>
+          <div class="ballon-item is-reverse">
+            <div class="ballon-time">2016/10/10 10:00</div>
+            <div class="ballon-image"><img src="https://placehold.jp/50x50.png" width="50" height="50" alt="" ></div>
+            <div class="ballon-text"><p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p></div>
+          </div>-->
+        </div>
+        <div class="timeline-btn"><input type="submit" value="返信入力" class="btn btn-middle" id="js-reply"></div>
+        <input type="hidden" name="contact_id" id="js-contact_id" value="14">
+      </div>
+    </div>
+    <!-- フッター -->
+    <footer id="footer">
+      <small>&copy; 2015 webdiv</small>
+    </footer>
+  </div>
+  <nav id="slideMenu">
+    <ul>
+      <li class="gnav-item"><a href="list.html">返信一覧</a></li>
+      <li class="gnav-item"><a href="../index/index.html">ログアウト</a></li>
+    </ul>
+  </nav>
+  <script src="../../lib/jquery2.2.4.min.js"></script>
+  <script src="../../js/common.js"></script>
+  <script src="../../js/timeline.js"></script>
+  <!--<script src="../../js/modal_contact.js"></script>-->
+  <script>
+  $(function() {
+    $('#js-ballon').timeline({
+      'direction': 'vertical',
+      'delay': 500
+      //'date': document.getElementById('js-calender').value
+    });
+  });
+  </script>
+</body>
+</html>

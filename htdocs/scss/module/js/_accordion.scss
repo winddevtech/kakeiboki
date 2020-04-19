@@ -1,0 +1,21 @@
+@charset 'UTF-8';
+/*アコーディオン*/
+@media only screen and (max-width: 768px) {
+  .accordion {
+    .js-acco-open, .js-acco-close{
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .js-acco-open::after, .js-acco-close::after{
+      cursor: pointer;
+      float: right;
+      font-family: FontAwesome;
+    }
+    .js-acco-open::after {
+      content: '\f077';
+    }
+    .js-acco-close::after {
+      content: '\f078';
+    }
+  }
+}

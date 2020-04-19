@@ -1,0 +1,42 @@
+@charset 'UTF-8';
+.tab {
+  overflow: hidden;
+  width: 100%;
+  .tab-menu {
+    overflow: hidden;
+    .tab-menu__item{
+      box-shadow: 2px 0 2px rgba(0,0,0,0.1), -2px 0 2px rgba(0,0,0,0.1);
+      color: #385c5b;
+      float: left;
+      text-align: center;
+      text-shadow: 1px 1px 1px rgba(255,255,255,0.3);
+      max-width: 120px;
+      width: 25%;
+      a {
+        background: #fff;
+        border: 1px solid rgba(153, 153, 153, 0.45);
+        border-radius: 3px 3px 0 0;
+        display: block;
+        font-size: 1em;
+        padding: 10px 0;
+        &:hover{
+          background: -webkit-linear-gradient(top, rgba(0, 150, 136, 0.43) 0%, rgba(0, 150, 136, 0.62) 100%);
+          background: -ms-linear-gradient(top, rgba(0, 150, 136, 0.43) 0%, rgba(0, 150, 136, 0.62) 100%);
+          background: linear-gradient(top, rgba(0, 150, 136, 0.43) 0%, rgba(0, 150, 136, 0.62) 100%);
+        }
+      }
+      &:first-child{
+        a{
+          border-right: 0;
+        }
+      }
+      &.tab-menu__item--state_active{
+        a{
+          background: -webkit-linear-gradient(top, rgba(0, 150, 136, 0.43) 0%,#009688 100%);
+          background: -ms-linear-gradient(top, rgba(0, 150, 136, 0.43) 0%,#009688 100%);
+          background: linear-gradient(top, rgba(0, 150, 136, 0.43) 0%,#009688 100%);
+        }
+      }
+    }
+  }
+}

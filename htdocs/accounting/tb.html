@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="keywords" content="家計簿記, 家計簿, 簿記、複式簿記">
+<meta name="description" content="簿記のように家計簿をつけながら経済に強くなるアプリです。">
+<title>合計残高試算表 | 家計簿記</title>
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div id="wrapper">
+    <header id="header">
+      <div class="header-inner clearfix">
+        <h1 class="logo">
+          <a href="./index.html">家計簿記</a>
+        </h1>
+        <div class="l-header-user">ようこそ XXXXXXXXXXXXXXXさん</div>
+        <nav class="gnav">
+          <ul>
+            <li id="js-gmenu-trigger"><a href="">メニュー</a></li>
+            <li><a href="../index/index.html">ログアウト</a></li>
+            <li><a href="../resign/index.html">退会</a></li>
+            <li><a href="#">ヘルプ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="gmenu_area" id="gmenu_area">
+      <nav class="gmenu" id="js-gmenu">
+        <ul class="gmenu-box">
+          <li class="gmenu-item"><a href="../budget/index.html">家計入力</a></li>
+          <li class="gmenu-item"><a href="../accounting/list.html">家計簿一覧</a></li>
+          <li class="gmenu-item"><a href="../accounting/calender.html">カレンダー表示</a></li>
+          <li class="gmenu-item gcurrent"><a href="../accounting/tb.html">試算表</a></li>
+          <li class="gmenu-item"><a href="../import/index.html">一括登録</a></li>
+          <li class="gmenu-item"><a href="../edit/index.html">ユーザー設定</a></li>
+          <li class="gmenu-item"><a href="../contact/index.html">お問い合わせ</a></li>
+          <span></span>
+        </ul>
+      </nav>
+    </div>
+    <div id="container">
+      <h2 class="title-h2">合計残高試算表</h2>
+      <div class="section">
+        <div class="outputdate-container">
+          <div class="outputdate-container-inner">
+          出力年月：
+          <select name="outputDate" id="js-tb" class="ctl-select date-select">
+            <<option value="2016/09">2016/09</option>
+            <option value="2016/08">2016/08</option>
+            <option value="2016/07">2016/07</option>
+            <option value="2016/06">2016/06</option>
+            <option value="2015/12">2015/12</option>
+            <option value="2015/01">2015/01</option>
+          </select>
+          </div>
+        </div>
+      </div>
+      <div class="section closeing-container" id="closeing-container">
+
+        <!--<div class="btn-row btn-single">
+          <input type="button" value="決算書類表示
+" onclick="location.href='bs_pl'" class="btn" />
+        </div>-->
+      </div>
+    </div>
+    <!-- フッター -->
+    <footer id="footer">
+      <small>&copy; 2015 webdiv</small>
+    </footer>
+  </div>
+  <nav id="slideMenu">
+    <ul>
+      <li><a href="../budget/index.html">家計入力</a></li>
+      <li><a href="../accounting/list.html">家計簿一覧</a></li>
+      <li><a href="../accounting/tb.html">試算表</a></li>
+      <li><a href="../import/index.html">一括登録</a></li>
+      <li><a href="../edit/index.html">ユーザー設定</a></li>
+      <li><a href="../contact/index.html">お問い合わせ</a></li>
+      <li><a href="../index/index.html">ログアウト</a></li>
+      <li><a href="../resign/index.html">退会</a></li>
+      <li><a href="#">ヘルプ</a></li>
+    </ul>
+  </nav>
+  <script src="../lib/jquery2.2.4.min.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/closeing.js"></script>
+  <script>
+  $(function() {
+    $('#js-tb').closeing({
+      'date': document.getElementById('js-tb').value
+    })
+    $('#js-tb').change(function (){
+      $(this).closeing({
+        'date': document.getElementById('js-tb').value
+      });
+    });
+  });
+  </script>
+</body>
+</html>

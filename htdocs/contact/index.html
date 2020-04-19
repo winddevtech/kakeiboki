@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="keywords" content="家計簿記, 家計簿, 簿記、複式簿記">
+  <meta name="description" content="簿記のように家計簿をつけながら経済に強くなるアプリです。">
+  <title>お問い合わせ内容入力 | 家計簿記</title>
+  <link type="text/css" rel="stylesheet" href="../css/style.css">
+  <link type="text/css" rel="stylesheet" href="../lib/jquery-ui/jquery-ui.min.css" />
+</head>
+<body>
+  <div id="wrapper">
+    <header id="header">
+      <div class="header-inner clearfix">
+        <h1 class="logo">
+          <a href="./">家計簿記</a>
+        </h1>
+        <nav class="gnav">
+          <ul>
+            <li id="js-gmenu-trigger"><a href="">メニュー</a></li>
+            <li><a href="../index/index.html">ログアウト</a></li>
+            <li><a href="../resign/">退会</a></li>
+            <li><a href="#">ヘルプ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="gmenu_area" id="gmenu_area">
+      <nav class="gmenu" id="js-gmenu">
+        <ul class="gmenu-box">
+          <li class="gmenu-item"><a href="../budget/">家計入力</a></li>
+          <li class="gmenu-item"><a href="../accounting/list">家計簿一覧</a></li>
+          <li class="gmenu-item"><a href="../accounting/calender.html">カレンダー表示</a></li>
+          <li class="gmenu-item"><a href="../accounting/tb.html">試算表</a></li>
+          <li class="gmenu-item"><a href="../import/index.html">一括登録</a></li>
+          <li class="gmenu-item"><a href="../edit/">ユーザー設定</a></li>
+          <li class="gmenu-item gcurrent"><a href="../contact/">お問い合わせ</a></li>
+          <span></span>
+        </ul>
+      </nav>
+    </div>
+    <div id="container">
+      <h2 class="title-h2">お問い合わせ内容入力</h2>
+      <ol class="step">
+        <li class="step-item step-prog">内容入力</li>
+        <li class="step-span">&raquo;</li>
+        <li class="step-item ">確認</li>
+        <li class="step-span">&raquo;</li>
+        <li class="step-item">登録完了</li>
+      </ol>
+      <div class="col-base col-630">
+        <form method="POST" action="confirm.html">
+          <small class="annotation">※全項目入力必須です</small>
+          <fieldset>
+            <table class="table-responsive">
+              <tbody>
+                <tr>
+                  <th>
+                    <label for="category_id">お問い合わせカテゴリ</label>
+                  </th>
+                  <td>
+                    <select name="category_id" id="category_id" class="ctl-select">
+                      <option value="cate_name1">XXXXXXXXXX</option>
+                      <option value="cate_name2">XXXXXXXXXX</option>
+                      <option value="cate_name3">XXXXXXXXXX</option>
+                      <option value="cate_name4">XXXXXXXXXX</option>
+                      <option value="cate_name5">XXXXXXXXXX</option>
+                      <option value="cate_name6">XXXXXXXXXX</option>
+                    </select> <span class="help-block">ユーザー名は全角半角合わせて20文字以内で入力して下さい。</span></td>
+                </tr>
+                <tr>
+                  <th>
+                    <label for="context">お問い合わせ本文</label>
+                  </th>
+                  <td>
+                    <textarea rows="10" placeholder="お問い合わせ本文を入力してください。" name="context" id="js-context" class="ctl-textarea"></textarea><span class="help-block">メールアドレスは100文字以内で入力して下さい。</span>
+                    <div class="counterRow">あと<span id="js-counter_context">1000</span>文字入力できます。</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- <input type="hidden" name="userId" value="{$userId}" /> -->
+            <input type="hidden" name="token" value="{$token}" />
+          </fieldset>
+          <div class="btn-row btn-single">
+            <input type="submit" value="確認" class="btn" id="js-submit" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- フッター -->
+    <footer id="footer">
+      <small>&copy; 2015 webdiv</small>
+    </footer>
+  </div>
+  <nav id="slideMenu">
+    <ul>
+      <li><a href="../budget/">家計入力</a></li>
+      <li><a href="../accounting/list">家計簿一覧</a></li>
+      <li><a href="../accounting/tb.html">試算表</a></li>
+      <li><a href="../import/index.html">一括登録</a></li>
+      <li><a href="../edit/">ユーザー設定</a></li>
+      <li><a href="../contact/">お問い合わせ</a></li>
+      <li><a href="../index/index.html">ログアウト</a></li>
+      <li><a href="../resign/">退会</a></li>
+      <li><a href="#">ヘルプ</a></li>
+    </ul>
+  </nav>
+  <script src="../lib/jquery2.2.4.min.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/checker.js"></script>
+  <script src="../js/contact.js"></script>
+  <script src="../js/counter.js"></script>
+</body>
+
+</html>

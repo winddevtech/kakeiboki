@@ -1,0 +1,81 @@
+@charset 'UTF-8';
+
+/*基本ライトボックス*/
+
+/*ロード時は非表示*/
+#lb-background, #lb-body {
+	display: none;
+}
+/*背景*/
+#lb-background {
+	background: #000;
+	height: 100%;
+	left: 0;
+	opacity: 0.7;
+	filter: alpha(opacity = 70);
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 502;
+	position: fixed;
+}
+
+/*コンテンツ*/
+#lb-body {
+	background: #fff;
+	left: 50%;
+	padding: 6px;
+	position: absolute;
+	top: 0;
+	width: 350px;
+	z-index: 503;
+
+  #lb-close {
+  	background: url(../images/btn-lb.png) no-repeat;
+  	background-position: -35px 0;
+  	display: block;
+  	height: 35px;
+  	position: absolute;
+  	right: 0;
+  	top: 0;
+  	width: 35px;
+  	z-index: 1;
+  }
+}
+
+#lb-loading {
+	left: 50%;
+	margin-left: -25px;
+	position: absolute;
+	top: 50%;
+	width: 50px;
+	z-index: 102;
+	position: absolute;
+  img {
+  	border-radius: 6px;
+  }
+}
+
+
+/*表示するコンテンツ（SP）*/
+#lb-body #lb-contents {
+	margin: 40px auto 0;
+	width: 90%;
+}
+
+#lb-contents table {
+	width: 100%;
+}
+
+.sp-mode th,.sp-mode td {
+	display: block;
+}
+/*PC版*/
+@media only screen and (min-width: 768px) {
+	#lb-body {
+		width: 680px;
+    #lb-contents {
+  		margin-top: 20px;
+  	}
+	}
+}

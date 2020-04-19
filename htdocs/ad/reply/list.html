@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="keywords" content="家計簿記, 家計簿, 簿記、複式簿記">
+  <meta name="description" content="簿記のように家計簿をつけながら経済に強くなるアプリです。">
+  <title>お問い合わせ一覧 | 家計簿記</title>
+  <link type="text/css" rel="stylesheet" href="../../css/style.css" />
+  <link type="text/css" rel="stylesheet" href="../../lib/font-awesome.min.css" />
+</head>
+<body>
+  <div id="wrapper">
+    <header id="header">
+      <div class="header-inner clearfix">
+        <h1 class="logo">
+          <a href="./">家計簿記</a>
+        </h1>
+        <nav class="gnav">
+          <ul>
+            <li class="gnav-item"><a href="../index/index.html">ログアウト</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div id="container">
+      <h2 class="title-h2">お問い合わせ一覧</h2>
+      <div class="box-large">
+        <div class="searchbox">
+          <label for="search" class="off-left">キーワード</label>
+          <input type="text" name="keyword" placeholder="キーワード" class="searchbox-keyword">
+          <button type="submit" class="searchbox-btn"><i class="fa fa-search"></i></button>
+        </div>
+      </div>
+      <div class="box-large">
+        <table class="list list-reply">
+          <thead class="list-head">
+            <tr>
+              <th class="list-col">行数</th>
+              <th class="list-col"><a href="?command=list-sem&amp;s=s_data_date&amp;o={$sortCommand}&amp;q={$searchQuery}">登録日<span
+                  class="glyphicon {if $sort_safe == 's_data_date'}{$arrowIcon}{/if}"></span></a></th>
+              <th class="list-col"><a href="?command=list-sem&amp;s=s_account_name&amp;o={$sortCommand}&amp;q={$searchQuery}">最新更新日<span
+                  class="glyphicon {if $sort_safe == 's_account_name'}{$arrowIcon}{/if}"></span></a></th>
+              <th class="list-col">ユーザー</th>
+              <th class="list-col">ステータス</th>
+              <th class="list-col"></th>
+            </tr>
+          </thead>
+          <tbody class="accordion list-body">
+            <tr class="list-row">
+              <td class="list-col">1000</td>
+              <td class="list-col">2015/12/10</td>
+              <td class="list-col">2015/12/10</td>
+              <td class="list-col">あいうえおかきくけこさしすせそ</td>
+              <td class="list-col">未返信</td>
+              <td class="list-col">
+                <input type="button" value="詳細" onClick="location.href='timeline.html'" class="btn" />
+              </td>
+            </tr>
+            <tr class="list-row">
+              <td class="list-col">1000</td>
+              <td class="list-col">2015/12/10</td>
+              <td class="list-col">2015/12/10</td>
+              <td class="list-col">あいうえおかきくけこさしすせそ</td>
+              <td class="list-col">未返信</td>
+              <td class="list-col">
+                <input type="button" value="詳細" onClick="location.href='timeline.html'" class="btn" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <nav class="paginationBox">
+          <ul class="pagination">
+            <li class="disabled"><a><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
+            <li class="active"><a href="?command=list-version&amp;page=1&amp;s=v_id&amp;o=asc">1</a></li>
+            <li><a href="?command=list-version&amp;page=2&amp;s=v_id&amp;o=asc">2</a></li>
+            <li><a href="?command=list-version&amp;page=2&amp;s=v_id&amp;o=asc">3</a></li>
+            <li><a href="?command=list-version&amp;page=2&amp;s=v_id&amp;o=asc">4</a></li>
+            <li><a href="?command=list-version&amp;page=2&amp;s=v_id&amp;o=asc">5</a></li>
+            <li><a href="?command=list-version&amp;page=2&amp;s=v_id&amp;o=asc">6</a></li>
+            <li><a href="?command=list-version&amp;page=2&amp;s=v_id&amp;o=asc">7</a></li>
+            <li><a href="?command=list-version&amp;page=2&amp;s=v_id&amp;o=asc">8</a></li>
+            <li><a href="?command=list-version&amp;page=2&amp;s=v_id&amp;o=asc">9</a></li>
+            <li><a href="?command=list-version&amp;page=2&amp;s=v_id&amp;o=asc">10</a></li>
+            <li><a href="?command=list-version&amp;page=2&amp;s=v_id&amp;o=asc"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- フッター -->
+    <footer id="footer">
+      <small>&copy; 2015 webdiv</small>
+    </footer>
+  </div>
+  <nav id="slideMenu">
+    <ul>
+      <li class="gnav-item"><a href="list.html">返信一覧</a></li>
+      <li class="gnav-item"><a href="../index/index.html">ログアウト</a></li>
+    </ul>
+  </nav>
+  <script src="../../lib/jquery2.2.4.min.js"></script>
+  <script src="../../js/common.js"></script>
+  <script src="../../js/accordion.js"></script>
+</body>
+</html>
